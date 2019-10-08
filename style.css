@@ -1,6 +1,6 @@
 html, body {
   height: 100%;
-  background: cornflowerblue;
+  background: #fea49f;
 }
 
 * {
@@ -20,14 +20,17 @@ html, body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  border: dashed black 1px;
-  border-radius: 5%;
+  background: #101357;
+  border-radius: 2%;
+  color: white;
 }
 
 #right {
   align-self: center;
+  display: flex;
   flex-direction: column;
   padding: 20px;
-  border: dashed black 1px;
-  border-radius: 5%;
+  background: #101357;
+  border-radius: 2%;
+  color: white;
 }
