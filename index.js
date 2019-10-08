@@ -4,20 +4,36 @@ import './style.css';
 const joke = document.getElementById("joke");
 const button = document.getElementById("jokeButton");
 
-const url = "https://icanhazdadjoke.com/"
+const url = 'https://icanhazdadjoke.com/';
+
+const options = {
+  method: 'GET',
+  headers: {
+    "Accept": 'application/json'
+  } 
+}
+
+function newJoke() {
+   fetch(url, options)
+    .then(resp => {
+      // console.log(resp.json)
+      return resp.json();
+    })
+    .then(json => {
+      joke.innerText = json.joke;
+    })
+    .catch(error => {
+      console.err(error);
+    })
+  
+}
+
+newJoke();
 
 document.addEventListener ('click', (event) => {
-  if (event.target === button) {
+  if (event.target.id === 'jokeButton') {
+    newJoke()
+    console.log("done");
 
-    fetch(url)
-      .then((resp) => resp.json())
-      .then(function(data) {
-        console.log(resp);
-        console.log(data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      })
-    // joke.innerHTML = "";
   }
 })
