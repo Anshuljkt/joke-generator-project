@@ -1,6 +1,8 @@
 html, body {
   height: 100%;
-  background: #fea49f;
+  /* background: #fea49f; */
+  /* background: #dcebfc; */
+  background: #fbaf08;
 }
 
 * {
@@ -15,31 +17,25 @@ html, body {
 }
 
 #container > div {
+  /* background: #101357; */
+  background: #27253c;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  box-shadow: 5px -5px 30px 0px #27253c;
 }
 
 #left {
-  background: #101357;
   border-radius: 2%;
   color: white;
   width: 40%;
   height: 50%;
 }
 
-/* 
-#left > h1 {
-  display: flex;
-  justify-self: flex-start;
-  height: 50%;
-} */
-
 #right {
   /* align-self: center; */
-  background: #101357;
   border-radius: 2%;
   color: white;
   width: 40%;
