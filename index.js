@@ -29,7 +29,7 @@ function newJoke() {
     })
 }
 
-const gifLink = "https://api.giphy.com/v1/gifs/search?api_key=hocrXROrKzZNjR9TKOdwfEt1OsEcK2Hr&q=cringe&limit=1&offset=0&rating=PG-13&lang=en"
+const gifLink = "https://api.giphy.com/v1/gifs/random?api_key=Jrn0ejSEASggu0wCdknGEcbXd918s5ZI&tag=cringe&rating=G"
 
 function gifSearch() {
    fetch(gifLink)
@@ -37,10 +37,13 @@ function gifSearch() {
       return resp1.json();
     })
     .then(json1 => {
-      newURL = json1.data[0].url;
+      // console.log(json1);
+      // newURL = json1.data[0].images.fixed_height.url;
+      // newURL = json1.data[0].images.fixed_height.url;
+      // console.log(json1.data[0].images.fixed_height.url);
       console.log(json1);
-      console.log(newURL);
-      gif.src = newURL;
+      const newjson = json1;
+      gif.src = newjson.data.images.fixed_height.url;
     })
     .catch(error1 => {
       console.err(error1);
@@ -48,12 +51,12 @@ function gifSearch() {
 }
 
 newJoke();
+gifSearch();
 
 document.addEventListener ('click', (event) => {
   if (event.target.id === 'jokeButton') {
     newJoke();
     gifSearch();
-    console.log("done");
-
+    console.log('done');
   }
 })
